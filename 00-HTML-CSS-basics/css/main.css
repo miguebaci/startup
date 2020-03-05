@@ -4,6 +4,19 @@
     font-weight: 900;
 }
 
+
+/*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
 .article {
     background-color: blue;
     border-radius: 10px;
@@ -11,11 +24,12 @@
 }
 
 .content {
+    position: relative;
     border-radius: 10px;
-    float: left;
+    left: 235px;
     font-size: 14px;
-    height: 400px;
-    margin: 0.5% 0.5%;
+    height: 1px;
+    margin: 1% 0.5%;
     width: 63%;
 }
 
@@ -51,17 +65,20 @@
 .navigation {
     background-color: blue;
     border-radius: 10px;
-    float: left;
+    left: 0px;
     font-size: 12px;
     height: 400px;
     margin: 0.5% 1%;
     width: 16%;
+    position: absolute
 }
 
 .sidebar {
     background-color: magenta;
+    position: relative;
     border-radius: 10px;
-    float: left;
+    left: 1078px;
+    bottom: 14px;
     font-size: 10px;
     height: 400px;
     margin: 0.5% 1%;
