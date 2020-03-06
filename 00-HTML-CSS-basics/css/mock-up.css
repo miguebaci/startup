@@ -1,0 +1,51 @@
+* {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+.container {
+    width: 90%;
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: space-between;
+}
+
+.imagecont {
+    width: 420px;
+    height: 300px;
+    object-fit: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 30px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.imagecont .imagecont-description {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    height: 10%;
+    width: 100%;
+}
+
+.imagecont:hover .imagecont-description {
+    background-color: rgb(64, 64, 64);
+    opacity: 1;
+}
