@@ -13,20 +13,27 @@ html {
     box-sizing: inherit
 }
 
-.container {
+h1 {
+    margin: 2%;
+}
+
+
+/*-------------------FLEX----------------------*/
+
+.container-flex {
     width: 90%;
     margin: 50px;
+    margin-left: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: stretch;
     align-content: space-between;
 }
 
-.imagecont {
-    width: 420px;
-    height: 300px;
+.imagecont-flex {
+    width: 25%;
     object-fit: contain;
     display: flex;
     flex-direction: column;
@@ -37,7 +44,7 @@ html {
     border: 1px solid black;
 }
 
-.imagecont .imagecont-description {
+.imagecont-flex .imagecont-flex-description {
     background-color: transparent;
     color: white;
     text-align: center;
@@ -45,7 +52,39 @@ html {
     width: 100%;
 }
 
-.imagecont:hover .imagecont-description {
+.imagecont-flex:hover .imagecont-flex-description {
+    background-color: rgb(64, 64, 64);
+    opacity: 1;
+}
+
+
+/*-------------------GRID----------------------*/
+
+.container-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto [col-start]);
+    grid-template-rows: repeat(2, 50% [col-start]);
+}
+
+.imagecont-grid {
+    width: 80%;
+    grid-template-rows: 5% 90%;
+    align-self: stretch;
+    margin: 5% 10%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.imagecont-grid .imagecont-grid-description {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.imagecont-grid:hover .imagecont-grid-description {
     background-color: rgb(64, 64, 64);
     opacity: 1;
 }
