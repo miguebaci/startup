@@ -7,34 +7,44 @@
 /*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
 
 html {
-    box-sizing: border-box
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit
+    box-sizing: content-box;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
-    align-items: center;
+    align-items: baseline;
+    align-content: space-between;
+    justify-content: space-between;
     width: 100%;
 }
 
 section {
     margin: 1em;
     text-align: center;
+    width: 25%;
+    height: 30%;
 }
 
 #jokeSection {
-    display: block;
-    position: relative;
     align-items: center;
-    clear: left;
+    max-width: 33%;
     margin: 1em;
+    border: 1em;
+}
+
+#repoSearch {
+    align-items: right;
+    margin: 1em;
+}
+
+.ul {
+    align-items: center;
+    margin: 12px;
+    padding: 3px;
+    list-style: none;
 }
 
 #hidden {
