@@ -21,23 +21,29 @@ let getJoke = () => {
 
 //--------------excercise 4--------------------//
 
-document.getElementById("searchBtn").addEventListener("click", () => {
+document.getElementById("searchBtn").addEventListener("click", (event) => {
+    event.preventDefault();
     let section = document.getElementById("repoSearch");
+    let exists = document.getElementById('repoList');
+    if (exists)
+        section.removeChild(exists);
     let ul = document.createElement('ul');
-    section.appendChild(ul)
-
-    searchRepo(ul);
+    ul.classList.add("ul");
+    ul.setAttribute("id", "repoList");
+    section.appendChild(ul);
+    let searchWord = document.getElementById("searchWord").value;
+    console.log(searchWord);
+    searchRepo(ul, searchWord);
 })
 
 const addLi = (item, ul) => {
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(item));
     ul.appendChild(li);
-    ul.classList.add("ul")
 }
 
-let searchRepo = (ul) => {
-    fetch('https://api.github.com/search/repositories?q=JavaScript')
+let searchRepo = (ul, searchWord) => {
+    fetch('https://api.github.com/search/repositories?q=' + searchWord)
         .then(response => response.json())
         .then((data) => {
             let items = data.items;
@@ -45,10 +51,6 @@ let searchRepo = (ul) => {
                 addLi(items[i].name, ul)
             }
 
-        })
-        .catch((error) => {
-            repoSearch.innerHTML = error;
-            repoSearch.style.backgroundColor = "red"
         })
 
 }
