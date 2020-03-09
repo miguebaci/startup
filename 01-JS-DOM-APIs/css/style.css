@@ -1,0 +1,33 @@
+* {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+
+/*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
+
+html {
+    box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+section {
+    margin: 1em;
+    text-align: center;
+}
+
+#hidden {
+    opacity: 0;
+    transition: 4s;
+}
