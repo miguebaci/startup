@@ -4,6 +4,18 @@ let section = document.getElementById('hidden');
 console.log(section);
 window.onload = () => section.style.opacity = 1;
 
-//--------------excercise 2--------------------//
+//------------excercise 3 (2 before)----------//
 
-document.getElementById("alertBtn").addEventListener("click", () => alert("Ayayayaya Power Rangers!"));
+let jokeSection = document.getElementById('jokeSection')
+
+document.getElementById("jokeBtn").addEventListener("click", () => getJoke());
+
+let getJoke = () => {
+    fetch('http://api.icndb.com/jokes/random')
+        .then(response => response.json())
+        .then((joke) => chuckJoke.innerHTML = joke.value.joke)
+        .catch((error) => {
+            jokeSection.innerHTML = error;
+            jokeSection.style.backgroundColor = "red"
+        })
+}

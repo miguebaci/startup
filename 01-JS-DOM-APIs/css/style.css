@@ -17,9 +17,11 @@ html {
 }
 
 .container {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    display: block;
+    align-items: center;
+    width: 100%;
 }
 
 section {
@@ -27,7 +29,19 @@ section {
     text-align: center;
 }
 
+#jokeSection {
+    display: block;
+    position: relative;
+    align-items: center;
+    clear: left;
+    margin: 1em;
+}
+
 #hidden {
+    display: block;
+    width: 100%;
+    position: relative;
+    clear: both;
     opacity: 0;
     transition: 4s;
 }
