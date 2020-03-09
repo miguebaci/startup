@@ -15,7 +15,7 @@ let getJoke = () => {
         .then((joke) => chuckJoke.innerHTML = joke.value.joke)
         .catch((error) => {
             jokeSection.innerHTML = error;
-            jokeSection.style.backgroundCulor = "red"
+            jokeSection.style.backgroundColor = "red"
         })
 }
 
