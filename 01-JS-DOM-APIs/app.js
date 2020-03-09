@@ -48,7 +48,7 @@ let searchRepo = (ul) => {
         })
         .catch((error) => {
             repoSearch.innerHTML = error;
-            repoSearch.style.backgroundCulor = "red"
+            repoSearch.style.backgroundColor = "red"
         })
 
 }
