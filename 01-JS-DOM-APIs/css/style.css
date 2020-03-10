@@ -10,6 +10,19 @@ html {
     box-sizing: content-box;
 }
 
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    margin: 1em;
+}
+
+#matrixTable {
+    width: 100%;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -29,6 +42,13 @@ section {
 }
 
 #jokeSection {
+    align-items: center;
+    max-width: 33%;
+    margin: 1em;
+    border: 1em;
+}
+
+#tableSection {
     align-items: center;
     max-width: 33%;
     margin: 1em;

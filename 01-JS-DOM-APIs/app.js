@@ -32,7 +32,6 @@ document.getElementById("searchBtn").addEventListener("click", (event) => {
     ul.setAttribute("id", "repoList");
     section.appendChild(ul);
     let searchWord = document.getElementById("searchWord").value;
-    console.log(searchWord);
     searchRepo(ul, searchWord);
 })
 
@@ -53,4 +52,42 @@ let searchRepo = (ul, searchWord) => {
 
         })
 
+}
+
+//--------------excercise 6--------------------//
+
+document.getElementById("tableBtn").addEventListener("click", (event) => {
+    event.preventDefault();
+    let section = document.getElementById("tableSection");
+    let exists = document.getElementById('matrixTable');
+    if (exists)
+        section.removeChild(exists);
+    let table = document.createElement('table');
+    table.classList.add("table");
+    table.setAttribute("id", "matrixTable");
+    section.appendChild(table);
+    addCells(table, matrix = [
+        ["Juan", "28", "Argentina"],
+        ["John", "25", "Canada"],
+        ["Pedro", "23", "España"]
+    ]);
+
+})
+
+const addCells = (table, matrix) => {
+
+    for (let i = 0; i < matrix.length; i++) {
+
+        let tableRow = document.createElement("tr");
+
+        for (let j = 0; j < matrix[i].length; j++) {
+            let tableCell = document.createElement("td");
+            let data = document.createTextNode(matrix[i][j]);
+            tableCell.appendChild(data);
+            tableRow.appendChild(tableCell);
+
+        }
+        table.appendChild(tableRow);
+    }
+    document.getElementById('tableSection').appendChild(table)
 }
