@@ -17,6 +17,13 @@ html {
     box-sizing: inherit
 }
 
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 2px groove (internal value);
+}
+
 .article {
     background-color: blue;
     border-radius: 10px;
