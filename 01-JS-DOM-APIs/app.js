@@ -5,19 +5,19 @@ window.onload = () => section.style.opacity = 1;
 
 //------------excercise 3 (2 before)----------//
 
-let jokeSection = document.getElementById('jokeSection')
-
-document.getElementById("jokeBtn").addEventListener("click", () => getJoke());
-
-let getJoke = () => {
-    fetch('http://api.icndb.com/jokes/random')
-        .then(response => response.json())
-        .then((joke) => chuckJoke.innerHTML = joke.value.joke)
-        .catch((error) => {
-            jokeSection.innerHTML = error;
-            jokeSection.style.backgroundColor = "red"
-        })
+let getJoke = async() => {
+    let jokeSection = document.getElementById('jokeSection');
+    try {
+        let response = await fetch('http://api.icndb.com/jokes/random');
+        let joke = await response.json();
+        chuckJoke.innerHTML = joke.value.joke;
+    } catch (error) {
+        jokeSection.innerHTML = error;
+        jokeSection.style.backgroundColor = "red";
+    }
 }
+
+document.getElementById("jokeBtn").addEventListener("click", getJoke);
 
 //--------------excercise 4--------------------//
 
