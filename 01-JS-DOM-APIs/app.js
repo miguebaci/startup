@@ -52,23 +52,17 @@ let searchRepo = (searchWord) => {
 
 document.getElementById("tableBtn").addEventListener("click", (event) => {
     event.preventDefault();
-    let section = document.getElementById("tableSection");
-    let exists = document.getElementById('matrixTable');
-    if (exists)
-        section.removeChild(exists);
-    let table = document.createElement('table');
-    table.classList.add("table");
-    table.setAttribute("id", "matrixTable");
-    section.appendChild(table);
-    addCells(table, matrix = [
+    addCells([
         ["Juan", "28", "Argentina"],
         ["John", "25", "Canada"],
         ["Pedro", "23", "España"]
     ]);
-
 })
 
-const addCells = (table, matrix) => {
+const addCells = (matrix) => {
+
+    let table = document.getElementById('matrixTable');
+    table.innerHTML = "";
 
     for (let i = 0; i < matrix.length; i++) {
 
