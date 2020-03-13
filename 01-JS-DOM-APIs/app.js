@@ -23,14 +23,8 @@ document.getElementById("jokeBtn").addEventListener("click", getJoke);
 
 document.getElementById("searchBtn").addEventListener("click", (event) => {
     event.preventDefault();
-    let section = document.getElementById("repoSearch");
-    let exists = document.getElementById('repoList');
-    if (exists)
-        section.removeChild(exists);
-    let ul = document.createElement('ul');
-    ul.classList.add("ul");
-    ul.setAttribute("id", "repoList");
-    section.appendChild(ul);
+    let ul = document.getElementById("repoList");
+    ul.innerHTML = "";
     let searchWord = document.getElementById("searchWord").value;
     searchRepo(ul, searchWord);
 })
