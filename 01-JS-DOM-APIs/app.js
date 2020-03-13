@@ -23,10 +23,8 @@ document.getElementById("jokeBtn").addEventListener("click", getJoke);
 
 document.getElementById("searchBtn").addEventListener("click", (event) => {
     event.preventDefault();
-    let ul = document.getElementById("repoList");
-    ul.innerHTML = "";
     let searchWord = document.getElementById("searchWord").value;
-    searchRepo(ul, searchWord);
+    searchRepo(searchWord);
 })
 
 const addLi = (item, ul) => {
@@ -35,7 +33,9 @@ const addLi = (item, ul) => {
     ul.appendChild(li);
 }
 
-let searchRepo = (ul, searchWord) => {
+let searchRepo = (searchWord) => {
+    let ul = document.getElementById("repoList");
+    ul.innerHTML = "";
     fetch('https://api.github.com/search/repositories?q=' + searchWord)
         .then(response => response.json())
         .then((data) => {
