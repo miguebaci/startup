@@ -16,7 +16,9 @@ class EventEmitter {
     emit(eventName) {
         const event = this.events[eventName];
         if (event) {
-            event.forEach(fn => fn(eventName));
+            event.forEach((callback) => {
+                callback(eventName);
+            });
         }
     }
 
@@ -62,11 +64,6 @@ class Movie extends EventEmitter {
 
 }
 
-movie1 = new Movie("Terminator 2: Judgment Day", 1991, "137 minutes");
-console.log(movie1.title);
-console.log(movie1.year);
-console.log(movie1.duration);
-
 class Actor {
 
     constructor(name, age) {
@@ -84,3 +81,11 @@ class Logger {
         console.log("The " + info + " event has been emitted");
     }
 }
+
+movie1 = new Movie("Terminator 2: Judgment Day", 1991, "137 minutes");
+
+
+let logger = new Logger();
+movie1.on("play", logger.log);
+movie1.play();
+movie1.off("play", logger.log);
