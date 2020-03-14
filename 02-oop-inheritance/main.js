@@ -96,3 +96,18 @@ let logger = new Logger();
 movie1.on("play", logger.log);
 movie1.play();
 movie1.off("play", logger.log);
+
+
+let social = {
+    share(friendName) {
+        return console.log(`${friendName} shared ${this.title}`);
+    },
+    like(friendName) {
+        return console.log(`${friendName} likes ${this.title}`);
+    }
+};
+
+Object.assign(movie1, social);
+
+movie1.like('Miguel');
+movie1.share('Miguel');
