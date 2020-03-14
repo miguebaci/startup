@@ -53,9 +53,7 @@ class Movie extends EventEmitter {
     addCast(cast) {
 
         if (Array.isArray(cast)) {
-            if (cast instanceof Actor)
-                this.cast.concat(cast);
-
+            this.cast = this.cast.concat(cast);
         } else {
             if (cast instanceof Actor)
                 this.cast.push(cast);
@@ -82,8 +80,17 @@ class Logger {
     }
 }
 
-movie1 = new Movie("Terminator 2: Judgment Day", 1991, "137 minutes");
+const movie1 = new Movie("Terminator 2: Judgment Day", 1991, "137 minutes");
+const arnold = new Actor('Arnold Schwarzenegger', 50);
+const actors = [
+    new Actor('Paul Winfield', 50),
+    new Actor('Michael Biehn', 50),
+    new Actor('Linda Hamilton', 50)
+];
 
+movie1.addCast(arnold);
+movie1.addCast(actors);
+console.log(movie1);
 
 let logger = new Logger();
 movie1.on("play", logger.log);
