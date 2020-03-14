@@ -33,6 +33,7 @@ class Movie extends EventEmitter {
         this.title = title;
         this.year = year;
         this.duration = duration;
+        this.cast = [];
     }
 
     play() {
@@ -45,6 +46,18 @@ class Movie extends EventEmitter {
 
     resume() {
         super.emit("resume");
+    }
+
+    addCast(cast) {
+
+        if (Array.isArray(cast)) {
+            if (cast instanceof Actor)
+                this.cast.concat(cast);
+
+        } else {
+            if (cast instanceof Actor)
+                this.cast.push(cast);
+        }
     }
 
 }
