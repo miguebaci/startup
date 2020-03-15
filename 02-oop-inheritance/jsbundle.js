@@ -1,9 +1,14 @@
-class EventEmitter {
+class Actor {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 
+}
+class EventEmitter {
     constructor() {
         this.events = {};
     }
-
 
     on(eventName, callback) {
         if (!this.events[eventName]) {
@@ -15,21 +20,28 @@ class EventEmitter {
 
     emit(eventName) {
         const event = this.events[eventName];
+
         if (event) {
-            event.forEach((callback) => {
+            event.forEach(callback => {
                 callback(eventName);
             });
         }
     }
 
-
     off(eventName, callback) {
         this.events[eventName] = this.events[eventName].filter(eventFn => callback !== eventFn);
     }
+
 }
+class Logger {
+    constructor() {}
 
+    log(info) {
+        console.log("The '" + info + "' event has been emitted");
+    }
+
+}
 class Movie extends EventEmitter {
-
     constructor(title, year, duration) {
         super();
         this.title = title;
@@ -51,33 +63,13 @@ class Movie extends EventEmitter {
     }
 
     addCast(cast) {
-
         if (Array.isArray(cast)) {
             this.cast = this.cast.concat(cast);
         } else {
-            if (cast instanceof Actor)
-                this.cast.push(cast);
+            if (cast instanceof Actor) this.cast.push(cast);
         }
     }
 
-}
-
-class Actor {
-
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-}
-
-class Logger {
-    constructor() {
-
-    }
-
-    log(info) {
-        console.log("The '" + info + "' event has been emitted");
-    }
 }
 
 const movie1 = new Movie("Terminator 2: Judgment Day", 1991, "137 minutes");
