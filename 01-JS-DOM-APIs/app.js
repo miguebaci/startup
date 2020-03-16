@@ -10,6 +10,7 @@ let getJoke = async() => {
     try {
         let response = await fetch('http://api.icndb.com/jokes/random');
         let joke = await response.json();
+        const chuckJoke = document.getElementById('chuckJoke');
         chuckJoke.innerHTML = joke.value.joke;
     } catch (error) {
         jokeSection.innerHTML = error;
@@ -33,18 +34,18 @@ const addLi = (item, ul) => {
     ul.appendChild(li);
 }
 
-let searchRepo = (searchWord) => {
+const createList = (items) => {
     let ul = document.getElementById("repoList");
     ul.innerHTML = "";
+    for (let i = 0; i < items.length; i++) {
+        addLi(items[i].name, ul)
+    }
+}
+
+let searchRepo = (searchWord) => {
     fetch('https://api.github.com/search/repositories?q=' + searchWord)
         .then(response => response.json())
-        .then((data) => {
-            let items = data.items;
-            for (let i = 0; i < items.length; i++) {
-                addLi(items[i].name, ul)
-            }
-
-        })
+        .then((data) => { createList(data.items) })
 
 }
 
