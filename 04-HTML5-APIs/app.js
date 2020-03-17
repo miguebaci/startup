@@ -1,3 +1,5 @@
+///////////////Exercise 1////////////////
+
 const saveBtn = document.getElementById("saveBtn");
 const clearBtn = document.getElementById("clearBtn");
 const textArea = document.getElementById("textArea");
@@ -65,3 +67,54 @@ const clearTextArea = (event) => {
 
 saveBtn.addEventListener("click", saveTextArea);
 clearBtn.addEventListener("click", clearTextArea);
+
+///////////////Exercise 2////////////////
+
+const dropZone = document.getElementById("dropZone");
+const dropData = document.getElementById("txtFileData");
+
+const overDropZone = (event) => {
+    event.preventDefault();
+    console.log("File is in the drop zone");
+}
+
+const enterDropZone = (event) => {
+    event.preventDefault();
+    console.log("File entered in the drop zone");
+    dropZone.classList.add("dropZoneReady");
+}
+
+const leaveDropZone = (event) => {
+    event.preventDefault();
+    console.log("File has left the drop zone");
+    dropZone.classList.remove("dropZoneReady");
+}
+
+const handleFiles = (file) => {
+
+}
+
+const readFile = (file) => {
+
+    let reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = function(event) {
+        dropData.textContent += event.target.result;
+    }
+}
+
+const dropTxt = (event) => {
+    event.preventDefault();
+    dropData.textContent = "";
+    let file = event.dataTransfer.files[0];
+    readFile(file);
+    dropZone.classList.remove("dropZoneReady");
+}
+
+
+
+
+dropZone.addEventListener("dragenter", enterDropZone);
+dropZone.addEventListener("dragleave", leaveDropZone);
+dropZone.addEventListener("dragover", overDropZone)
+dropZone.addEventListener("drop", dropTxt);
