@@ -118,3 +118,53 @@ dropZone.addEventListener("dragenter", enterDropZone);
 dropZone.addEventListener("dragleave", leaveDropZone);
 dropZone.addEventListener("dragover", overDropZone)
 dropZone.addEventListener("drop", dropTxt);
+
+///////////////Exercise 3////////////////
+
+let wsUri = "wss://echo.websocket.org/";
+let output;
+
+function init() {
+    output = document.getElementById("webSocketOutput");
+    testWebSocket();
+}
+
+const testWebSocket = () => {
+    websocket = new WebSocket(wsUri);
+    websocket.onopen = (event) => { onOpen(event) };
+    websocket.onclose = (event) => { onClose(event) };
+    websocket.onmessage = (event) => { onMessage(event) };
+    websocket.onerror = (event) => { onError(event) };
+}
+
+const onOpen = (event) => {
+    writeToScreen("CONNECTED");
+    doSend("Testing WebSocket");
+}
+
+const onClose = (event) => {
+    writeToScreen("DISCONNECTED");
+}
+
+const onMessage = (event) => {
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + event.data + '</span>');
+    websocket.close();
+}
+
+const onError = (event) => {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + event.data);
+}
+
+const doSend = (message) => {
+    writeToScreen("SENT: " + message);
+    websocket.send(message);
+}
+
+const writeToScreen = (message) => {
+    let pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+}
+
+window.addEventListener("load", init, false);
