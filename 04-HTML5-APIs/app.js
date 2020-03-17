@@ -98,8 +98,12 @@ const readFile = (file) => {
 
     let reader = new FileReader();
     reader.readAsText(file);
-    reader.onload = function(event) {
-        dropData.textContent += event.target.result;
+    if (file.type == "text/plain") {
+        reader.onload = function(event) {
+            dropData.textContent += event.target.result;
+        }
+    } else {
+        dropData.textContent += "Not a .txt file";
     }
 }
 
