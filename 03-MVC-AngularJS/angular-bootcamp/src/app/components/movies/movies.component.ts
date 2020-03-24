@@ -5,6 +5,7 @@ import { Movie } from '../../models/movie';
 import { MovieService } from '../../services/movie.service';
 import { MessageService } from '../../services/message.service';
 
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -21,15 +22,9 @@ export class MoviesComponent implements OnInit {
     this.getMovies();
   }
 
-  
-onSelect(movie: Movie): void {
-  this.selectedMovie = movie;
-  this.messageService.add(`MovieService: Selected movie id=${movie.id}`);
-}
-
-getMovies(): void {
+  getMovies(): void {
   this.movieService.getMovies()
       .subscribe(movies => this.movies = movies);
-}
+  }
 
 }
