@@ -5,13 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MovieService } from '../../services/movie.service';
 
-
 @Component({
-  selector: 'app-movie-info',
-  templateUrl: './movie-info.component.html',
-  styleUrls: ['./movie-info.component.css']
+  selector: 'app-movie-edit',
+  templateUrl: './movie-edit.component.html',
+  styleUrls: ['./movie-edit.component.css']
 })
-export class MovieInfoComponent implements OnInit {
+export class MovieEditComponent implements OnInit {
 
   @Input() movie: Movie;
 
@@ -21,10 +20,16 @@ export class MovieInfoComponent implements OnInit {
     this.getMovie();
   }
 
+  
   getMovie(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.movieService.getMovie(id)
       .subscribe(movie => this.movie = movie);
+  }
+
+  save(): void {
+    this.movieService.updateMovie(this.movie)
+      .subscribe(() => this.goBack());
   }
 
   goBack(): void {
