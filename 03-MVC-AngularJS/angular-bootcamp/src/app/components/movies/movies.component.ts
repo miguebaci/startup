@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Movie } from '../../models/movie';
 
 import { MovieService } from '../../services/movie.service';
 
 
+=======
+import { MOVIES } from '../../mock-movies';
+import { Movie } from '../../models/movie';
+
+>>>>>>> df878f6... Movie listing done
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -11,6 +17,7 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MoviesComponent implements OnInit {
 
+<<<<<<< HEAD
   movies: Movie[];
 
   constructor(private movieService: MovieService) { }
@@ -37,5 +44,19 @@ export class MoviesComponent implements OnInit {
     this.movies = this.movies.filter(m => m !== movie);
     this.movieService.deleteMovie(movie).subscribe();
   }
+=======
+  movies = MOVIES;
+  selectedMovie: Movie;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  
+onSelect(movie: Movie): void {
+  this.selectedMovie = movie;
+}
+>>>>>>> df878f6... Movie listing done
 
 }

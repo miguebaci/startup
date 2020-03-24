@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -39,16 +40,30 @@ import { RouterModule } from '@angular/router';
     InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forRoot([]),
 =======
+=======
+import { FormsModule } from '@angular/forms';
+>>>>>>> df878f6... Movie listing done
 
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    NavbarComponent,
+    MoviesComponent
   ],
   imports: [
+<<<<<<< HEAD
     BrowserModule
 >>>>>>> 635ee2d... framework downloaded
+=======
+    BrowserModule,
+    FormsModule
+>>>>>>> df878f6... Movie listing done
   ],
   providers: [],
   bootstrap: [AppComponent]
