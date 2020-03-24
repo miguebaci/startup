@@ -1,7 +1,11 @@
 <div *ngIf="messageService.messages.length">
 
     <h2>Messages</h2>
+<<<<<<< HEAD
     <button type="button" class="btn btn-secondary btn-sm" (click)="messageService.clear()">Clear</button>
+=======
+    <button class="clear" (click)="messageService.clear()">clear</button>
+>>>>>>> 184fc33... movie and message services added
     <div *ngFor='let message of messageService.messages'> {{message}} </div>
 
 </div>

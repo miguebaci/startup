@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
+<<<<<<< HEAD
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { catchError, tap } from 'rxjs/operators';
+=======
+import { MOVIES } from '../mock-movies';
+import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
+>>>>>>> 184fc33... movie and message services added
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
+<<<<<<< HEAD
   
   private moviesUrl = 'api/movies';
 
@@ -73,5 +80,13 @@ export class MovieService {
       tap(_ => this.log(`deleted movie id=${id}`)),
       catchError(this.handleError<Movie>('deleteMovie'))
     );
+=======
+
+  constructor(private messageService: MessageService) { }
+
+  getMovies(): Observable<Movie[]> {
+    this.messageService.add('MovieService: fetched movies');
+    return of(MOVIES);
+>>>>>>> 184fc33... movie and message services added
   }
 }

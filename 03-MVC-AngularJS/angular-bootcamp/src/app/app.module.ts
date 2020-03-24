@@ -10,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { MessagesComponent } from './components/messages/messages.component';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -48,13 +49,17 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MoviesComponent } from './components/movies/movies.component';
+=======
+>>>>>>> 184fc33... movie and message services added
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieInfoComponent,
+    MessagesComponent
   ],
   imports: [
 <<<<<<< HEAD

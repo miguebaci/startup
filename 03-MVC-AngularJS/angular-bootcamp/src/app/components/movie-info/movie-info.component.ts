@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../models/movie';
 
+<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MovieService } from '../../services/movie.service';
 
 
+=======
+>>>>>>> 184fc33... movie and message services added
 @Component({
   selector: 'app-movie-info',
   templateUrl: './movie-info.component.html',
@@ -15,6 +18,7 @@ export class MovieInfoComponent implements OnInit {
 
   @Input() movie: Movie;
 
+<<<<<<< HEAD
   constructor(private route: ActivatedRoute, private movieService: MovieService, private location: Location) { }
 
   ngOnInit(): void {
@@ -29,6 +33,11 @@ export class MovieInfoComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+=======
+  constructor() { }
+
+  ngOnInit(): void {
+>>>>>>> 184fc33... movie and message services added
   }
 
 }

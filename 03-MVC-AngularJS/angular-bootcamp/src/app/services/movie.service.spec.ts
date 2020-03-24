@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
@@ -5,10 +6,17 @@ import { MovieService } from './movie.service';
 
 import { Movie } from '../models/movie';
 
+=======
+import { TestBed } from '@angular/core/testing';
+
+import { MovieService } from './movie.service';
+
+>>>>>>> 184fc33... movie and message services added
 describe('MovieService', () => {
   let service: MovieService;
 
   beforeEach(() => {
+<<<<<<< HEAD
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
     });
@@ -64,4 +72,13 @@ describe('MovieService', () => {
   afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
     httpMock.verify();
   }));
+=======
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(MovieService);
+  });
+
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+>>>>>>> 184fc33... movie and message services added
 });
