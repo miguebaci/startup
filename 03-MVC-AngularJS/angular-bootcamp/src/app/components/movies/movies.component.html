@@ -19,11 +19,13 @@
     </ul>
 =======
 <h2>My movies</h2>
-<ul class="list-group" *ngFor="let movie of movies" (click)="onSelect(movie)">
+<ul class="list-group" *ngFor="let movie of movies">
     <li class="list-group-item">
         <h5>Title: {{movie.title}}</h5>
+        <a routerLink="/info/{{movie.id}}">Info</a>
     </li>
     <hr>
+<<<<<<< HEAD
 </ul>
 
 <<<<<<< HEAD
@@ -62,3 +64,6 @@
 =======
 <app-movie-info [movie]="selectedMovie"></app-movie-info>
 >>>>>>> 184fc33... movie and message services added
+=======
+</ul>
+>>>>>>> 729e309... routing done

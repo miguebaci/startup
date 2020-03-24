@@ -11,6 +11,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { MessagesComponent } from './components/messages/messages.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -51,6 +52,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MoviesComponent } from './components/movies/movies.component';
 =======
 >>>>>>> 184fc33... movie and message services added
+=======
+import { AppRoutingModule } from './app-routing.module';
+>>>>>>> 729e309... routing done
 
 @NgModule({
   declarations: [
@@ -67,8 +71,13 @@ import { MoviesComponent } from './components/movies/movies.component';
 >>>>>>> 635ee2d... framework downloaded
 =======
     BrowserModule,
+<<<<<<< HEAD
     FormsModule
 >>>>>>> df878f6... Movie listing done
+=======
+    FormsModule,
+    AppRoutingModule
+>>>>>>> 729e309... routing done
   ],
   providers: [],
   bootstrap: [AppComponent]

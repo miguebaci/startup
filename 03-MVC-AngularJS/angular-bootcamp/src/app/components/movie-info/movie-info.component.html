@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div class="container" *ngIf="movie">
 
     <ul class="list-group py-4">
@@ -19,34 +20,39 @@
     <button type="button" class="btn-secondary btn-lg" (click)="goBack()">Return</button>
 =======
 <div *ngIf="movie">
+=======
+<div class="container" *ngIf="movie">
+>>>>>>> 729e309... routing done
 
-    <div class="input-group input-group-lg p-2 mt-3">
+    <div class="input-group input-group-lg pb-2 mt-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
         </div>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="movie.title" placeholder="Title" />
     </div>
 
-    <div class="input-group input-group-lg p-2">
+    <div class="input-group input-group-lg pb-2">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg">Year</span>
         </div>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="movie.year" placeholder="Year" />
     </div>
 
-    <div class="input-group input-group-lg p-2">
+    <div class="input-group input-group-lg pb-2">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg">Director</span>
         </div>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="movie.director" placeholder="Director" />
     </div>
 
-    <div class="input-group input-group-lg p-2">
+    <div class="input-group input-group-lg pb-2">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg">My Points</span>
         </div>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="movie.points" placeholder="MyPoints" />
     </div>
 >>>>>>> 184fc33... movie and message services added
+
+    <button type="button" class="btn-secondary btn-lg" (click)="goBack()">Return</button>
 
 </div>
