@@ -9,6 +9,11 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieInfoComponent } from './components/movie-info/movie-info.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
+import { MovieAddComponent } from './components/movie-add/movie-add.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,18 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent,
     MoviesComponent,
     MovieInfoComponent,
-    MessagesComponent
+    MessagesComponent,
+    MovieEditComponent,
+    MovieAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

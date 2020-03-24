@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 
-
 import { MovieService } from '../../services/movie.service';
-import { MessageService } from '../../services/message.service';
 
 
 @Component({
@@ -14,9 +12,8 @@ import { MessageService } from '../../services/message.service';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[];
-  selectedMovie: Movie;
 
-  constructor(private movieService: MovieService, private messageService: MessageService) { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -25,6 +22,20 @@ export class MoviesComponent implements OnInit {
   getMovies(): void {
   this.movieService.getMovies()
       .subscribe(movies => this.movies = movies);
+  }
+
+  add(title: string): void {
+    title = title.trim();
+    if (!title) { return; }
+    this.movieService.addMovie({ title } as Movie)
+      .subscribe(movie => {
+        this.movies.push(movie);
+      });
+  }
+
+  delete(movie: Movie): void {
+    this.movies = this.movies.filter(m => m !== movie);
+    this.movieService.deleteMovie(movie).subscribe();
   }
 
 }
