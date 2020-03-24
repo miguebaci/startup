@@ -15,4 +15,10 @@ export class MovieService {
     this.messageService.add('MovieService: fetched movies');
     return of(MOVIES);
   }
+
+  getMovie(id: number): Observable<Movie> {
+    // TODO: send the message _after_ fetching the hero
+    this.messageService.add(`MovieService: fetched movie id=${id}`);
+    return of(MOVIES.find(movie => movie.id === id));
+  }
 }
