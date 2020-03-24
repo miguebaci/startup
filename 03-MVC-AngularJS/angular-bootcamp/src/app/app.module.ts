@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -37,6 +38,17 @@ import { RouterModule } from '@angular/router';
     HttpClientInMemoryWebApiModule.forRoot(
     InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forRoot([]),
+=======
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule
+>>>>>>> 635ee2d... framework downloaded
   ],
   providers: [],
   bootstrap: [AppComponent]
