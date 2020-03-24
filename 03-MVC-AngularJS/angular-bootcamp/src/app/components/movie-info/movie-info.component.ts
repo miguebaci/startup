@@ -52,7 +52,6 @@ export class MovieInfoComponent implements OnInit {
     this.getMovie();
   }
 
-  
   getMovie(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.movieService.getMovie(id)

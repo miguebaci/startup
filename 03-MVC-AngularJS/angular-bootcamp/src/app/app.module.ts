@@ -18,6 +18,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
 import { MovieAddComponent } from './components/movie-add/movie-add.component';
+<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
 
 
@@ -55,6 +56,8 @@ import { MoviesComponent } from './components/movies/movies.component';
 =======
 import { AppRoutingModule } from './app-routing.module';
 >>>>>>> 729e309... routing done
+=======
+>>>>>>> e3bba9b... add edit delete movie components done
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent,
     MoviesComponent,
     MovieInfoComponent,
-    MessagesComponent
+    MessagesComponent,
+    MovieEditComponent,
+    MovieAddComponent
   ],
   imports: [
 <<<<<<< HEAD
@@ -76,8 +81,16 @@ import { AppRoutingModule } from './app-routing.module';
 >>>>>>> df878f6... Movie listing done
 =======
     FormsModule,
+<<<<<<< HEAD
     AppRoutingModule
 >>>>>>> 729e309... routing done
+=======
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+    InMemoryDataService, { dataEncapsulation: false })
+>>>>>>> e3bba9b... add edit delete movie components done
   ],
   providers: [],
   bootstrap: [AppComponent]

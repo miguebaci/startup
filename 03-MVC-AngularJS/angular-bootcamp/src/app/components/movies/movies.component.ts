@@ -14,9 +14,7 @@ import { Movie } from '../../models/movie';
 =======
 import { Movie } from '../../models/movie';
 
-
 import { MovieService } from '../../services/movie.service';
-import { MessageService } from '../../services/message.service';
 
 <<<<<<< HEAD
 >>>>>>> 184fc33... movie and message services added
@@ -33,6 +31,7 @@ export class MoviesComponent implements OnInit {
 <<<<<<< HEAD
 <<<<<<< HEAD
   movies: Movie[];
+<<<<<<< HEAD
 
   constructor(private movieService: MovieService) { }
 
@@ -64,8 +63,10 @@ export class MoviesComponent implements OnInit {
   movies: Movie[];
 >>>>>>> 184fc33... movie and message services added
   selectedMovie: Movie;
+=======
+>>>>>>> e3bba9b... add edit delete movie components done
 
-  constructor(private movieService: MovieService, private messageService: MessageService) { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -80,5 +81,19 @@ export class MoviesComponent implements OnInit {
 =======
   }
 >>>>>>> 729e309... routing done
+
+  add(title: string): void {
+    title = title.trim();
+    if (!title) { return; }
+    this.movieService.addMovie({ title } as Movie)
+      .subscribe(movie => {
+        this.movies.push(movie);
+      });
+  }
+
+  delete(movie: Movie): void {
+    this.movies = this.movies.filter(m => m !== movie);
+    this.movieService.deleteMovie(movie).subscribe();
+  }
 
 }
