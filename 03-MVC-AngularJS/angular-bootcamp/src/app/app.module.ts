@@ -14,6 +14,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
 import { MovieAddComponent } from './components/movie-add/movie-add.component';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MovieAddComponent } from './components/movie-add/movie-add.component';
     HttpClientModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-    InMemoryDataService, { dataEncapsulation: false })
+    InMemoryDataService, { dataEncapsulation: false }),
+    RouterModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
