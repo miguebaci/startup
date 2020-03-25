@@ -15,8 +15,12 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+<<<<<<< HEAD
 import { catchError, map, tap } from 'rxjs/operators';
 >>>>>>> e3bba9b... add edit delete movie components done
+=======
+import { catchError, tap } from 'rxjs/operators';
+>>>>>>> af529b2... jasmine+karma test
 
 @Injectable({
   providedIn: 'root'

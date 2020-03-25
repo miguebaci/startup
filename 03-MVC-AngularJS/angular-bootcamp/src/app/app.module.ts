@@ -19,6 +19,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { MovieEditComponent } from './components/movie-edit/movie-edit.component';
 import { MovieAddComponent } from './components/movie-add/movie-add.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
 
 
@@ -58,6 +59,10 @@ import { AppRoutingModule } from './app-routing.module';
 >>>>>>> 729e309... routing done
 =======
 >>>>>>> e3bba9b... add edit delete movie components done
+=======
+import { RouterModule } from '@angular/router';
+
+>>>>>>> af529b2... jasmine+karma test
 
 @NgModule({
   declarations: [
@@ -89,8 +94,13 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
+<<<<<<< HEAD
     InMemoryDataService, { dataEncapsulation: false })
 >>>>>>> e3bba9b... add edit delete movie components done
+=======
+    InMemoryDataService, { dataEncapsulation: false }),
+    RouterModule.forRoot([]),
+>>>>>>> af529b2... jasmine+karma test
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,6 +16,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   it(`should have as title 'angular-bootcamp'`, () => {
@@ -31,4 +32,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span').textContent).toContain('angular-bootcamp app is running!');
   });
 >>>>>>> 635ee2d... framework downloaded
+=======
+>>>>>>> af529b2... jasmine+karma test
 });
