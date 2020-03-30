@@ -7,9 +7,11 @@ const textArea = document.getElementById("textArea");
 
 const saveLocal = (key, value) => {
 
-    localStorage.setItem(key, value)
-    if (localStorage.getItem(key) === null)
-        throw new Error("There was an error when saving");
+    try {
+        localStorage.setItem(key, value);
+    } catch (e) {
+        console.error("There was an error saving your file ", e);
+    }
 
 }
 
@@ -133,38 +135,37 @@ function init() {
     testWebSocket();
 }
 
-const testWebSocket = () => {
-    websocket = new WebSocket(wsUri);
-    websocket.onopen = (event) => { onOpen(event) };
-    websocket.onclose = (event) => { onClose(event) };
-    websocket.onmessage = (event) => { onMessage(event) };
-    websocket.onerror = (event) => { onError(event) };
+function testWebSocket() {
+    let socket = new WebSocket(wsUri);
+    socket.onopen = onOpen;
+    socket.onclose = onClose;
+    socket.onmessage = onMessage;
+    socket.onerror = onError;
 }
 
-const onOpen = (event) => {
+function onOpen(event) {
     writeToScreen("CONNECTED");
+    doSend = (message) => {
+        writeToScreen("SENT: " + message);
+        this.send(message);
+    };
     doSend("Testing WebSocket");
 }
 
-const onClose = (event) => {
+function onClose(event) {
     writeToScreen("DISCONNECTED");
 }
 
-const onMessage = (event) => {
+function onMessage(event) {
     writeToScreen('<span style="color: blue;">RESPONSE: ' + event.data + '</span>');
-    websocket.close();
+    this.close();
 }
 
-const onError = (event) => {
+function onError(event) {
     writeToScreen('<span style="color: red;">ERROR:</span> ' + event.data);
 }
 
-const doSend = (message) => {
-    writeToScreen("SENT: " + message);
-    websocket.send(message);
-}
-
-const writeToScreen = (message) => {
+function writeToScreen(message) {
     let pre = document.createElement("p");
     pre.style.wordWrap = "break-word";
     pre.innerHTML = message;
