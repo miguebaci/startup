@@ -1,14 +1,18 @@
-* {
+/*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
+
+html {
+    box-sizing: border-box;
     font-size: 14px;
     font-family: Arial;
     font-weight: 900;
 }
 
+[class$="r"] {
+    background-color: magenta;
+}
 
-/*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
-
-html {
-    box-sizing: border-box
+[class*="a"]:not([class$="r"]) {
+    background-color: blue;
 }
 
 *,
@@ -17,20 +21,19 @@ html {
     box-sizing: inherit
 }
 
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    border: 2px groove (internal value);
+}
+
 .article {
-    background-color: blue;
     border-radius: 10px;
     height: 280px;
 }
 
-.container {
-    width: 100%;
-    position: relative;
-    display: block;
-}
-
 .navigation {
-    background-color: blue;
     position: relative;
     float: left;
     width: 16%;
@@ -45,42 +48,45 @@ html {
     display: inline-block;
     position: relative;
     font-size: 14px;
-    margin: 1% 0.5%;
+    margin: 0% 0.5%;
+    padding: 1em;
     width: 63%;
 }
 
 .content>.header {
     height: 50px;
+    font-size: 14px;
     margin: 0 0 10px 0;
+    padding: 10px;
 }
 
 .content>.footer {
     height: 50px;
     margin: 10px 0 0 0;
+    padding: 20px;
 }
 
 .footer {
-    background-color: magenta;
     display: block;
     border-radius: 10px;
     font-size: 10px;
     height: 100px;
     margin: 0.5% 1%;
+    padding: 40px;
     text-align: center;
 }
 
 .header {
-    background-color: magenta;
     display: block;
     border-radius: 10px;
     font-size: 46px;
     height: 100px;
     margin: 0.5% 1%;
     text-align: center;
+    padding: 0.5em;
 }
 
 .sidebar {
-    background-color: magenta;
     float: right;
     position: relative;
     border-radius: 10px;
