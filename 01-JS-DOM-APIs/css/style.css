@@ -1,0 +1,77 @@
+* {
+    font-size: 14px;
+    font-family: Arial;
+}
+
+
+/*https://adamschwartz.co/magic-of-css/chapters/1-the-box/*/
+
+html {
+    box-sizing: content-box;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    margin: 1em;
+}
+
+#matrixTable {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    align-items: baseline;
+    align-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+}
+
+section {
+    margin: 1em;
+    text-align: center;
+    width: 25%;
+    height: 30%;
+}
+
+#jokeSection {
+    align-items: center;
+    max-width: 33%;
+    margin: 1em;
+    border: 1em;
+}
+
+#tableSection {
+    align-items: center;
+    max-width: 33%;
+    margin: 1em;
+    border: 1em;
+}
+
+#repoSearch {
+    align-items: right;
+    margin: 1em;
+}
+
+.ul {
+    align-items: center;
+    margin: 12px;
+    padding: 3px;
+    list-style: none;
+}
+
+#hidden {
+    display: block;
+    width: 100%;
+    position: relative;
+    clear: both;
+    opacity: 0;
+    transition: 4s;
+}
