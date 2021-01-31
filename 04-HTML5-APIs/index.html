@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Web UI Bootcamp 2020</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="box">
+        <fieldset>
+            <legend>Your information:</legend>
+
+            <textarea id="textArea" cols="50" rows="10" placeholder="Your information"></textarea>
+
+            <br><br/>
+
+            <span>
+                <input type="button" id="saveBtn" value="Save"/>
+            </span>
+
+            <span>
+                <input type="button" id="clearBtn" value="Clear">
+            </span>
+
+        </fieldset>
+
+        <form class="dropForm">
+            <fieldset>
+
+                <legend>Drag & Drop</legend>
+
+                <div class="dropZone" id="dropZone">
+                    Drop you .txt file here!
+                    <p id="txtFileData"></p>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+        <fieldset>
+            <legend>Websockets Testing</legend>
+
+            <div id="webSocketOutput"></div>
+
+        </fieldset>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
