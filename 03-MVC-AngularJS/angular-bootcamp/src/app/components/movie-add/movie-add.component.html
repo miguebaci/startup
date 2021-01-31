@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="input-group input-group-lg pb-2 mt-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Title</span>
+        </div>
+        <input #movieTitle type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Add Title" />
+    </div>
+
+    <div class="input-group input-group-lg pb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Year</span>
+        </div>
+        <input #movieYear type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Add Year" />
+    </div>
+
+    <div class="input-group input-group-lg pb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Director</span>
+        </div>
+        <input #movieDirector type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Add Director" />
+    </div>
+
+    <div class="input-group input-group-lg pb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">My Points</span>
+        </div>
+        <input #moviePoints type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Add Points" />
+    </div>
+
+    <button name="button" class="btn btn-primary btn-lg p-2 mr-2" (click)="add(movieTitle.value, movieYear.value, movieYear.value, moviePoints.value); movieTitle.value=''; movieYear.value='';movieDirector.value=''; moviePoints.value='';">Add</button>
+    <button name="button" class="btn btn-secondary btn-lg p-2 ml-2" (click)="goBack()">Return</button>
+
+</div>
